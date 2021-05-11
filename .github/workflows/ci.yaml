@@ -36,6 +36,7 @@ jobs:
 
   check_if_version_upgraded:
     name: Check if version upgrade
+    needs: test
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     outputs:

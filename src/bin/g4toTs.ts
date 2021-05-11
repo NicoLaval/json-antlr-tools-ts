@@ -6,7 +6,7 @@ const libDirPath = pathJoin(__dirname, "..", "lib");
 const fileBasename = "JSON.g4";
 
 const vlt_g4_raw = fs
-  .readFileSync(pathJoin(libDirPath, "source", fileBasename))
+  .readFileSync(pathJoin(libDirPath, fileBasename))
   .toString("utf8");
 
 fs.writeFileSync(
