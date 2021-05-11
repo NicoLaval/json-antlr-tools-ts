@@ -5,32 +5,32 @@
     <i></i>
     <br>
     <br>
-    <img src="https://github.com/garronej/json-antlr-tools-ts/workflows/ci/badge.svg?branch=main">
-    <img src="https://img.shields.io/bundlephobia/minzip/json-antlr-tools-ts">
-    <img src="https://img.shields.io/npm/dw/json-antlr-tools-ts">
-    <img src="https://img.shields.io/npm/l/json-antlr-tools-ts">
+    <img src="https://github.com/garronej/vtl-2-0-antlr-tools-ts/workflows/ci/badge.svg?branch=main">
+    <img src="https://img.shields.io/bundlephobia/minzip/vtl-2-0-antlr-tools-ts">
+    <img src="https://img.shields.io/npm/dw/vtl-2-0-antlr-tools-ts">
+    <img src="https://img.shields.io/npm/l/vtl-2-0-antlr-tools-ts">
 </p>
 <p align="center">
-  <a href="https://github.com/NicoLaval/json-antlr-tools-ts">Home</a>
+  <a href="https://github.com/NicoLaval/vtl-2-0-antlr-tools-ts">Home</a>
   -
-  <a href="https://github.com/NicoLaval/json-antlr-tools-ts">Documentation</a>
+  <a href="https://github.com/NicoLaval/vtl-2-0-antlr-tools-ts">Documentation</a>
 </p>
 
 # Install / Import
 
 ```bash
-$ npm install --save json-antlr-tools-ts
+$ npm install --save vtl-2-0-antlr-tools-ts
 ```
 
 ```typescript
-import { myFunction, myObject } from "json-antlr-tools-ts";
+import { myFunction, myObject } from "vtl-2-0-antlr-tools-ts";
 ```
 
 Specific imports:
 
 ```typescript
-import { myFunction } from "json-antlr-tools-ts/myFunction";
-import { myObject } from "json-antlr-tools-ts/myObject";
+import { myFunction } from "vtl-2-0-antlr-tools-ts/myFunction";
+import { myObject } from "vtl-2-0-antlr-tools-ts/myObject";
 ```
 
 ## Import from HTML, with CDN
@@ -38,9 +38,9 @@ import { myObject } from "json-antlr-tools-ts/myObject";
 Import it via a bundle that creates a global ( wider browser support ):
 
 ```html
-<script src="//unpkg.com/json-antlr-tools-ts/bundle.min.js"></script>
+<script src="//unpkg.com/vtl-2-0-antlr-tools-ts/bundle.min.js"></script>
 <script>
-    const { myFunction, myObject } = json_antlr_tools_ts;
+    const { myFunction, myObject } = vtl_2_0_antlr_tools_ts;
 </script>
 ```
 
@@ -48,7 +48,7 @@ Or import it as an ES module:
 
 ```html
 <script type="module">
-    import { myFunction, myObject } from "//unpkg.com/json-antlr-tools-ts/zz_esm/index.js";
+    import { myFunction, myObject } from "//unpkg.com/vtl-2-0-antlr-tools-ts/zz_esm/index.js";
 </script>
 ```
 

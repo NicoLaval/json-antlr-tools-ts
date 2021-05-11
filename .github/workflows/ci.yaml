@@ -8,34 +8,11 @@ on:
       - main
 
 jobs:
-
-  test_lint:
-    runs-on: ubuntu-latest
-    if: ${{ !github.event.created && github.repository != 'garronej/ts_ci' }}
-    steps:
-    - uses: actions/checkout@v2.3.4
-    - uses: actions/setup-node@v2.1.3
-    - name: Making sure 'npm run lint' and 'npm run format' does not changes anything.
-      run: |
-        PACKAGE_MANAGER=npm
-        if [ -f "./yarn.lock" ]; then
-            PACKAGE_MANAGER=yarn
-        fi
-
-        if [ "$PACKAGE_MANAGER" = "yarn" ]; then
-            yarn install --frozen-lockfile                                                                                                                                                                                        
-        else
-            npm ci
-        fi
-        $PACKAGE_MANAGER run lint:check
-        $PACKAGE_MANAGER run format:check
-
   test:
     runs-on: ${{ matrix.os }}
-    needs: test_lint
     strategy:
       matrix:
-        node: [ '15', '14', '13', '12' ]
+        node: [ '14', '13', '12' ]
         os: [ windows-latest, ubuntu-latest ]
     name: Test with Node v${{ matrix.node }} on ${{ matrix.os }}
     steps:
@@ -52,18 +29,15 @@ jobs:
       run: |
         yarn install --frozen-lockfile                                                                                                                                                                                        
         yarn build
-        yarn test
     - if: steps.step1.outputs.npm_or_yarn == 'npm'
       run: |
         npm ci                                                                                                                                                                                        
         npm run build
-        npm test
 
   check_if_version_upgraded:
     name: Check if version upgrade
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: test
     outputs:
       from_version: ${{ steps.step1.outputs.from_version }}
       to_version: ${{ steps.step1.outputs.to_version }}
